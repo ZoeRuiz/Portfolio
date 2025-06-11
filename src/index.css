@@ -1,0 +1,4 @@
+/* Evita scroll lateral general */
+html, body {
+  overflow-x: hidden;
+}
