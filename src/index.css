@@ -1,4 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 /* Evita scroll lateral general */
 html, body {
   overflow-x: hidden;
 }
+¡*, *::before, *::after { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 101.5%;
+  height: 100%;
+}
+body {
+  background: #f5f5f8;
+  color: #1a1a1a;
+}
+
+
