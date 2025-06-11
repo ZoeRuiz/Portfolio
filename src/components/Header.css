@@ -1,0 +1,64 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;                       /* full width sin overflow */
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 56px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.logo-img {
+  height: 48px;
+  width: auto;
+}
+
+/* -------- NAV -------- */
+.nav {
+  display: flex;
+  gap: 1rem;             /* Separación entre enlaces */
+}
+
+.nav a {
+  position: relative;
+  color: #1a1a1a;        /* Texto negro por defecto */
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0.25rem 0.7rem;    /* Espacio vertical para hover */
+  text-decoration: none; /* Sin subrayado por defecto */
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.nav a:hover {
+  color: #ffffff;            /* Texto blanco */
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff; /* Línea blanca */
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+
