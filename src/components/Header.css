@@ -2,7 +2,9 @@
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;                       /* full width sin overflow */
+  width: 100%;        /* full width sin overflow */
+  background: transparent;       
+  border: none;  
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
@@ -16,6 +18,7 @@
   height: 56px;
   padding: 0 1rem;
   margin: 0 auto;
+  border: none;     
 }
 
 .logo-img {
@@ -35,29 +38,43 @@
   color: #1a1a1a;        /* Texto negro por defecto */
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
-  font-weight: 400;
-  padding: 0.25rem 0.7rem;    /* Espacio vertical para hover */
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;    /* Espacio vertical para hover */
   text-decoration: none; /* Sin subrayado por defecto */
   transition: color 0.3s ease, background 0.3s ease;
 }
 
-.nav a:hover {
-  color: #ffffff;            /* Texto blanco */
+.nav a:hover::after,
+.nav a:focus::after {
+  width: 100%;
 }
-
 .nav a::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background-color: #ffffff; /* Línea blanca */
+  height: 1.5px;
+  background-color: #0b0b0b;  /* color de la línea */
   transition: width 0.3s ease;
 }
 
-.nav a:hover::after {
-  width: 100%;
+/* ==========================
+   Tablet (≥768px)
+   ========================== */
+@media (min-width: 768px) {
+  .nav a {
+  position: relative;
+  color: #1a1a1a;        /* Texto negro por defecto */
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none; /* Sin subrayado por defecto */
+  transition: color 0.3s ease, background 0.3s ease;
 }
 
+.nav a:hover {
+  color: #ffffff;      
+}  
+}
 
