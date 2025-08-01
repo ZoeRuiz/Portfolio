@@ -90,11 +90,13 @@ portfolio/
 
 ---
 
-## 💻 Estructura del proyecto
+## 💻 Desarrollo
 
 npm run dev
 # o
 yarn dev
+
+Abre tu navegador en http://localhost:5173.
 
 ---
 
