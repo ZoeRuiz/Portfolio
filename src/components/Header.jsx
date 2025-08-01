@@ -1,6 +1,7 @@
 // src/components/Header.jsx
 import React, { useState, useEffect } from 'react';
 import './Header.css';
+import logoImg from '../assets/logo.png';  // importa tu logo desde src/assets
 
 export default function Header() {
   const [active, setActive] = useState('about');
@@ -33,7 +34,7 @@ export default function Header() {
       <div className="container">
         <a href="#about" className="logo">
           <img
-            src="/logo.png"
+            src={logoImg}
             alt="Logo ZR"
             className="logo-img"
           />

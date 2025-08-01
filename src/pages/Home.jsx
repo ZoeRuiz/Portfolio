@@ -4,11 +4,16 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 import HomeDesktop from './HomeDesktop';
 import '../styles/Home.css';
 
+// Importa las imágenes para que Vite gestione las rutas correctamente
+import heroDesktopImg from '../assets/imagen-desktop.png';
+import heroTabletImg  from '../assets/hero-blob-tablet.png';
+import heroMobileImg  from '../assets/hero-blob.png';
+
 export default function Home() {
-  // 1) Este Hook SIEMPRE al principio:
+  // 1) Hook para detectar desktop VS móvil
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-  // 2) Hooks de la máquina de escribir:
+  // 2) Lógica de máquina de escribir
   const fullText = '¡Hola, soy Zoe Ruiz!';
   const [displayedText, setDisplayedText] = useState('');
 
@@ -23,13 +28,11 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [fullText]);
 
-  // 3) Luego el RETURN condicional:
+  // 3) Render condicional para desktop / móvil
   if (isDesktop) {
-    // En desktop mostramos HomeDesktop sin animación
     return <HomeDesktop />;
   }
 
-  // En móvil/tablet usamos la versión animada:
   return (
     <section className="hero" id="about">
       <div className="hero-container">
@@ -37,7 +40,7 @@ export default function Home() {
         <div className="hero-content-left">
           <div className="hero-text">
             <p className="subheadline">
-              UX/UI Designer, Graphic Designer & FullStack Developer
+              UX/UI Designer, Graphic Designer &amp; FullStack Developer
             </p>
             <p className="description">
               Soy diseñadora UX/UI y especialista en diseño gráfico, recién salida
@@ -49,14 +52,11 @@ export default function Home() {
             </p>
           </div>
           <div className="hero-buttons">
-            <a
-              href="mailto:zoraida.ruiz89@gmail.com"
-              className="btn-primary"
-            >
+            <a href="mailto:zoraida.ruiz89@gmail.com" className="btn-primary">
               E-mail
             </a>
             <a
-              href="https://www.linkedin.com/in/zoe-ruiz-917979336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+              href="https://www.linkedin.com/in/zoe-ruiz-917979336"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
@@ -69,9 +69,9 @@ export default function Home() {
         {/* DERECHA */}
         <div className="hero-image-wrapper">
           <picture className="hero-image">
-            <source media="(min-width: 1024px)" srcSet="/imagen-desktop.png" />
-            <source media="(min-width: 768px)" srcSet="/hero-blob-tablet.png" />
-            <img src="/hero-blob.png" alt="Ilustración Zoe con bocadillo" />
+            <source media="(min-width: 1024px)" srcSet={heroDesktopImg} />
+            <source media="(min-width: 768px)" srcSet={heroTabletImg} />
+            <img src={heroMobileImg} alt="Ilustración Zoe con bocadillo" />
           </picture>
           <div className="title-wrapper image-title">
             <h1 className="typewriter-text">{displayedText}</h1>

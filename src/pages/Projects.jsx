@@ -1,27 +1,36 @@
+// src/components/Projects.jsx
 import React from 'react';
 import '../styles/Projects.css';
+
+// Importa tus imágenes para que Vite gestione las rutas
+import ahorcadoImg from '../assets/ahorcado-juego.png';
+import comercioImg  from '../assets/Comercio-gris.png';
+import maquetaImg   from '../assets/Maqueta.png';
 
 const projectData = [
   {
     title: 'El juego del Ahorcado',
-    description: 'Primer proyecto de Bootcamp FullStack Developer. Juego interactivo desarrollado con HTML, CSS y JavaScript. Incluye funcionalidad de selección de categorías, un sistema de control de intentos, música de fondo según la categoría elegida y un sonido de victoria al ganar.',
-    image: './ahorcado-juego.png',
+    description:
+      'Primer proyecto de Bootcamp FullStack Developer. Juego interactivo desarrollado con HTML, CSS y JavaScript. Incluye funcionalidad de selección de categorías, un sistema de control de intentos, música de fondo según la categoría elegida y un sonido de victoria al ganar.',
+    image: ahorcadoImg,
     demoLink: 'https://authorgg.github.io/Juego-Ahorcado/',
-    codeLink: 'https://github.com/ZoeRuiz/Juego-Ahorcado.git'
+    codeLink: 'https://github.com/ZoeRuiz/Juego-Ahorcado.git',
   },
   {
     title: 'SegundaTec',
-    description: 'Proyecto Final Bootcamp: plataforma de compra y venta de artículos de tecnología de segunda mano entre particulares.Está desarrollado con Vite, React y CSS puro, y consume los endpoints de la API REST del backend.',
-    image: './Comercio-gris.png',
+    description:
+      'Proyecto Final Bootcamp: plataforma de compra y venta de artículos de tecnología de segunda mano entre particulares. Desarrollado con Vite, React y CSS puro, consumiendo los endpoints de la API REST del backend.',
+    image: comercioImg,
     demoLink: 'https://zoeruiz.github.io/PFB_Compra_Venta/',
-    codeLink: 'https://github.com/ZoeRuiz/PFB_Compra_Venta.git'
+    codeLink: 'https://github.com/ZoeRuiz/PFB_Compra_Venta.git',
   },
   {
     title: 'Maquetación web',
-    description: 'Maquetación pixel perfect y responsive, siguiendo los diseños proporcionados en Figma',
-    image: './Maqueta.png',
+    description:
+      'Maquetación pixel perfect y responsive, siguiendo los diseños proporcionados en Figma.',
+    image: maquetaImg,
     demoLink: 'https://zoeruiz.github.io/prueba-maquetacion/',
-    codeLink: 'https://github.com/ZoeRuiz/prueba-maquetacion.git'
+    codeLink: 'https://github.com/ZoeRuiz/prueba-maquetacion.git',
   },
 ];
 
