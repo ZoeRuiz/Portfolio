@@ -2,8 +2,9 @@
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;        /* full width sin overflow */
-  background: transparent;       
+  width: 100%;        
+  background-color: rgba(255,255,255,0.95);
+  backdrop-filter: blur(4px);     
   border: none;  
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
@@ -76,5 +77,8 @@
 .nav a:hover {
   color: #ffffff;      
 }  
+.nav a::after {
+  background-color: white;  /* color de la línea */
+}
 }
 

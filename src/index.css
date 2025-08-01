@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-/* Evita scroll lateral general */
 html, body {
   overflow-x: hidden;
 }
@@ -16,5 +15,18 @@ body {
   background: #f5f5f8;
   color: #1a1a1a;
 }
+html {
+  scroll-padding-top: 60px; 
+}
 
+:root {
+  --primary-color: #FFD600;                
+  --bg-light: #f9f9f9;
+  --input-bg: #fff;
+  --input-border: #ccc;
+  --input-focus-border: var(--primary-color);
+  --btn-bg: var(--primary-color);
+  --btn-text: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
 

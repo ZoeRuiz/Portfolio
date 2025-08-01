@@ -1,17 +1,54 @@
-import { NavLink, Link } from 'react-router-dom';
+// src/components/Header.jsx
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 export default function Header() {
+  const [active, setActive] = useState('about');
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px' }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => observer.disconnect();
+  }, []);
+
+  const links = [
+    { id: 'about',    label: 'Sobre mí' },
+    { id: 'projects', label: 'Proyectos' },
+    { id: 'contact',  label: 'Contacto' },
+  ];
+
   return (
     <header className="header">
       <div className="container">
-       <Link to="/" className="logo">
-         <img src="/logo.png" alt="Logo ZR" className="logo-img" />
-       </Link>
+        <a href="#about" className="logo">
+          <img
+            src="/logo.png"
+            alt="Logo ZR"
+            className="logo-img"
+          />
+        </a>
         <nav className="nav">
-          <NavLink to="/about"  className={({isActive})=>isActive?'active':''}>Sobre mí</NavLink>
-          <NavLink to="/projects" className={({isActive})=>isActive?'active':''}>Proyectos</NavLink>
-          <NavLink to="/contact" className={({isActive})=>isActive?'active':''}>Contacto</NavLink>
+          {links.map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              className={active === id ? 'active' : ''}
+              onClick={() => setActive(id)}
+            >
+              {label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>

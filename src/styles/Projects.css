@@ -1,0 +1,151 @@
+
+/* ======================= */
+/* Sección base (mobile)   */
+/* ======================= */
+.projects-section {
+  padding: 2rem 1rem;
+  background-color: var(--bg-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;        /* tamaño más pequeño en móvil */
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.section-title::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: var(--primary-color);
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+/* Listado de tarjetas apiladas */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Tarjeta individual */
+.project-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Texto dentro de la tarjeta */
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.project-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--text-color);
+}
+.project-description {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  flex-grow: 1;
+  color: #494a43;
+  line-height: 1.5;
+}
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Imagen dentro de la tarjeta */
+.project-image-wrapper {
+  width: 100%;
+  overflow: hidden;         /* asegura recorte uniforme */
+  border-radius: 0.5rem;    /* mismo radio que la tarjeta */
+}
+.project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* cubre todo el wrapper */
+}
+.projects-section .btn-primary,
+.projects-section .btn-outline {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+}
+/* ───────────────────────────────────── */
+/* Ajustes Mobile (<768px):            */
+/* ───────────────────────────────────── */
+@media (max-width: 767px) {
+  .projects-grid {
+    align-items: center;       /* centra cada tarjeta */
+  }
+
+  .project-image-wrapper {
+    width: 60%;                /* ocupa 80% del contenedor */
+    max-height: 200px;         /* evita alturas excesivas */
+    margin: 0 auto 1rem;       /* centrada y separada del texto */
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .project-content {
+    padding: 1.5rem;             /* reduce padding interno */
+  }
+}
+
+/* — Tablet & Desktop (>=768px) — */
+@media (min-width: 768px) {
+  .projects-section {
+    padding: 3rem 2rem;
+  }
+  .section-title {
+    font-size: 2.5rem;         /* tamaño original en tablet */
+  }
+  .projects-grid {
+    gap: 3rem;
+    align-items: stretch;
+  }
+  .project-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  /* Texto al 50%, imagen al 50% */
+  .project-content,
+  .project-image-wrapper {
+    width: 50%;
+  }
+  /* Alternar orden en tarjetas pares */
+  .project-card.reverse {
+    flex-direction: row-reverse;
+  }
+  .project-content {
+    padding: 2rem;
+  }
+}
+
+/* — Desktop grande (>=1024px) — */
+@media (min-width: 1024px) {
+  .projects-section {
+    padding: 4rem 4rem;
+  }
+}
