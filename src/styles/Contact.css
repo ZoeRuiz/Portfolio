@@ -1,0 +1,106 @@
+
+.contact-section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.contact-section .container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  max-width: 350px;    
+  width: 100%;
+  margin: 0 auto;      
+}
+.contact-form .form-group {
+  display: block;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;         
+  max-width: 100%;     
+  margin: 0 auto;      
+  box-sizing: border-box;
+}
+.contact-form label {
+  display: block;
+  font-family: "Nunito", sans-serif;
+  margin-bottom: .5rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  padding: .75rem 1rem;
+  font-size: 1rem;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: border-color .2s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+}
+
+.btn-send {
+  display: inline-block;
+  font-family: "Nunito", sans-serif;
+  font-size: medium;
+  background-color: #FFD600;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 1rem auto 0;   
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-send:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+  .contact-section {
+  clear: both;       /* limpia floats anteriores */
+}
+
+.form-status.error {
+  color: #e63946; 
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+
+.form-status.success {
+  color: #38C924;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  }
+

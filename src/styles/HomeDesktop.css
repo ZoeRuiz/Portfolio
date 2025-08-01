@@ -1,0 +1,112 @@
+.hero-desktop {
+    display: flex;
+    width: 80%;
+    height: calc(100vh - 6rem);
+    margin: 0 auto;
+    padding: 6rem 125px;
+    gap: 4rem;
+    align-items: center;
+    position: relative;  
+    overflow: visible;
+  }
+
+  /* 2) Columna izquierda */
+  .hero-desktop__left {
+    flex: 0 0 45%;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;  /* encima de la ilustración */
+    z-index: 3;
+  }
+  .hero-desktop__subtitle {
+    color: #FDC600;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin: 0;
+    margin-right: 10rem;
+    margin-top: rem;
+  }
+  .hero-desktop__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    margin: 0;
+    color: #1a1a1a;
+    border-right: 2px solid rgba(0,0,0,0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+      typing 1.5s steps(20, end),
+      blink-caret 0.75s step-end 2,
+      hide-caret  0s linear 1.5s forwards;
+      
+  }
+  .hero-desktop__text {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.13rem;
+    line-height: 1.8;
+    color: #494a43;
+  }
+  .hero-desktop__buttons {
+    
+    display: flex;
+    gap: 1.5rem;
+  }
+  .hero-desktop__buttons .btn-primary,
+  .hero-desktop__buttons .btn-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  /* 3) Columna derecha: 60% */
+  .hero-desktop__right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: absolute;      /* se extrae del flujo */
+    top: 0;                  /* esquina superior */
+    right: -10px;                /* alineada a la derecha */
+    height: calc(100vh - 6rem);
+    overflow: hidden;
+    z-index: 1;              /* debajo del contenido izquierdo */
+  }
+  /* blob amarillo detrás de la imagen */
+  .hero-desktop__blob {
+    display: none;
+  }
+  .hero-desktop__img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+   @keyframes typing {
+    from { width: 0; }
+    to   { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50%      { border-color: rgba(0,0,0,0.75); }
+  }
+  @keyframes hide-caret {
+    to { border-right: none; }
+  }
+
+
+  /* PANTALLAS AUN MÁS GRANDES */
+@media (min-width: 1440px) and (max-width: 1920px) {
+     .hero-desktop__right {
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: absolute;      /* se extrae del flujo */
+    top: 0;                  /* esquina superior */
+    right: -60px;                /* alineada a la derecha */
+    height: calc(100vh - 6rem);
+    overflow: hidden;
+    z-index: 1;              /* debajo del contenido izquierdo */
+  }
+}
