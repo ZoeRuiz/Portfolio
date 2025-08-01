@@ -79,7 +79,7 @@ portfolio/
 
 1. **Clona el repositorio**  
    
-   git clone https://github.com/tuusuario/portfolio.git
+   git clone https://github.com/ZoeRuiz/portfolio.git
    cd portfolio
 
 2. **Instala dependencias**  
