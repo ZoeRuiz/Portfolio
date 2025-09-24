@@ -1,9 +1,8 @@
 .hero-desktop {
-    display: flex;
+    display: grid;
     width: 80%;
-    height: calc(100vh - 6rem);
     margin: 0 auto;
-    padding: 8rem 125px;
+    padding: 1rem 125px;
     gap: 4rem;
     align-items: center;
     position: relative;  
@@ -17,7 +16,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    position: relative;  /* encima de la ilustración */
+    position: relative;  
     z-index: 3;
   }
   .hero-desktop__subtitle {
@@ -27,7 +26,7 @@
     font-size: 1.5rem;
     margin: 0;
     margin-right: 10rem;
-    margin-top: rem;
+    margin-top: 5rem;
   }
   .hero-desktop__title {
     font-family: 'Playfair Display', serif;
@@ -49,18 +48,8 @@
     font-size: 1.13rem;
     line-height: 1.8;
     color: #494a43;
+    width: 80vh;
   }
-  .hero-desktop__buttons {
-    
-    display: flex;
-    gap: 1.5rem;
-  }
-  .hero-desktop__buttons .btn-primary,
-  .hero-desktop__buttons .btn-outline {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-  }
-
   /* 3) Columna derecha: 60% */
   .hero-desktop__right {
     flex: 0 0 100%;
@@ -96,17 +85,270 @@
     to { border-right: none; }
   }
 
+.desktop-techs {
+  display: flex;
+  gap: 2rem;
+  width: 80%;
+  margin: 4rem auto;
+}
+.desktop-techs > section {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+/* ───────────────────────────────────────── */
+/* SUBSECCIÓN: “Manejo y uso”                */
+/* ───────────────────────────────────────── */
+.skills-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin: 0;
+  position: relative;
+}
+.skills-heading::after {
+  content: "";
+  width: 4rem;
+  height: 0.25rem;
+  background: #FDC600;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-items: center;
+}
+.skill-card {
+  width: 120px;
+  height: 120px;
+  background: #111;
+  border: 2px solid #FDC600;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(253,198,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s, box-shadow .2s;
+}
+.skill-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: .5rem;
+  object-fit: cover;
+}
+.skill-card span {
+  font-family: "Nunito", sans-serif;
+  font-size: .9rem;
+  color: #fff;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(253,198,0,0.4);
+}
+
+/* ───────────────────────────────────────── */
+/* SUBSECCIÓN: “Estoy aprendiendo”           */
+/* ───────────────────────────────────────── */
+.learning-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin: 0;
+  position: relative;
+}
+.learning-heading::after {
+  content: "";
+  width: 4rem;
+  height: 0.25rem;
+  background: #FDC600;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-items: center;
+}
+.learning-card {
+  width: 120px;
+  height: 120px;
+  background: transparent;
+  border: 2px dashed #FDC600;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, transform .2s;
+}
+.learning-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: .5rem;
+  object-fit: cover;
+}
+.learning-card span {
+  font-family: "Nunito", sans-serif;
+  font-size: .9rem;
+  color: #FDC600;
+  font-style: italic;
+}
+.learning-card:hover {
+  background: rgba(253,198,0,0.1);
+  transform: translateY(-5px);
+}
+/* ──────────────────────────── */
+/* “Otras habilidades” */
+/* ──────────────────────────── */
+.other-skills-section {
+  width: 80%;
+  margin: 4rem auto;
+  text-align: center;
+}
+.other-skills-heading {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin: 0;
+  position: relative;
+}
+.other-skills-heading::after {
+  content: "";
+  width: 4rem;
+  height: 0.25rem;
+  background: #FDC600;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+.other-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-items: center;
+}
+.other-skill-card {
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border: 2px solid #FDC600;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(253,198,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s, box-shadow .2s;
+}
+.other-skill-card img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: .5rem;
+  object-fit: cover;
+}
+.other-skill-card span {
+  font-family: "Nunito", sans-serif;
+  font-size: .9rem;
+  color: #333;
+  text-align: center;
+}
+.other-skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(253,198,0,0.4);
+}
+/* ──────────────────────────────── */
+/* Metodologías y buenas prácticas  */
+/* ──────────────────────────────── */
+.methodologies-section {
+  width: 80%;
+  margin: 3rem auto 6rem;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  color: #494a43;
+}
+.methodologies-section h4 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  position: relative;
+}
+.methodologies-section h4::after {
+  content: "";
+  width: 3rem;
+  height: 0.2rem;
+  background: #FDC600;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+.methodologies-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+/* =============================== *
+ *       CONTACTO & BOTONES       *
+ * =============================== */
+.contact-text {
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #1a1a1a;
+  margin: 1.5rem auto 0.5rem;
+  width: 80%;
+}
+.hero-buttons--bottom {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1rem auto 2rem !important;
+}
+.contact-text {
+  margin: 0 auto !important;
+
+}
+@media (min-width: 1024px) {
+  /* Contenedor de botones en desktop */
+  .hero-buttons--bottom {
+    width: auto !important;           /* nada de 70% */
+    max-width: none !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Cada botón ocupa su espacio natural */
+  .hero-buttons--bottom a {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap !important;   /* evita que "E-mail" rompa línea */
+    padding: 0.75rem 1.75rem !important; /* recupera el padding original */
+    min-width: max-content !important;   /* nunca se haga más pequeño que el texto */
+  }
+}
 
   /* PANTALLAS AUN MÁS GRANDES */
 @media (min-width: 1440px) and (max-width: 1920px) {
      .hero-desktop__right {
     flex: 0 0 100%;
     max-width: 100%;
-    position: absolute;      /* se extrae del flujo */
-    top: 0;                  /* esquina superior */
-    right: -60px;                /* alineada a la derecha */
+    position: absolute;      
+    top: 0;                 
+    right: -60px;                
     height: calc(100vh - 6rem);
     overflow: hidden;
-    z-index: 1;              /* debajo del contenido izquierdo */
+    z-index: 1;              
   }
 }

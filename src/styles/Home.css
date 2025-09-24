@@ -1,13 +1,13 @@
+@media (max-width: 1023px) {
 .header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   background: transparent;
-  z-index: 20;              /* encima de la imagen */
+  z-index: 20;
 }
 
-/* Estilos base */
 .hero {
   position: relative;
   display: flex;
@@ -15,100 +15,75 @@
   justify-content: flex-start;
   overflow: hidden;
 }
-.hero-content {
-  display: flex;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  right: -10%;
-  width: 70%;
-  height: 100%;
-  background-color: #FFD600;
-  border-bottom-left-radius: 50% 20%;
-  border-top-left-radius: 50% 50%;
-  transform: translateY(-10%);
-  z-index: 0;
-}
 
 .hero-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
-  gap: 2rem;
 }
 .hero-content-left,
 .hero-image-wrapper {
   width: 100%;
 }
 
-/* Imagen */
 .hero-image {
   position: absolute;
   top: 0;
   right: 0;
-  left: 10px;
-  height: 40vh;            /* altura total */
+  left: 10%;
+  height: 40vh;
   overflow: hidden;
-
 }
 .hero-image img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: cover;
-  margin: 0;         /* elimina posible margen */
-  box-shadow: none;  /* quita sombra interna */
-  border-radius: 0;  /* elimina bordes redondeados */
+  margin: 0;
+  box-shadow: none;
 }
 .title-wrapper {
   position: absolute;
-  top: 12%; /* Ajusta según el diseño */
+  top: 3.5%;
   width: 40%;
-  left: 2.3rem;
+  left: 15%;
   text-align: center;
   z-index: 2;
 }
 .typewriter-text {
   position: relative;
-  min-height: 3rem; /* Reserva espacio */
+  min-height: 3rem; 
 }
 .hero-text {
   position: relative;
   font-family: "Nunito", sans-serif;
   color: #555;
   width: 100%;
-  max-width: 50%;           /* hasta la mitad */
+  max-width: 50%;           
   z-index: 5;
 }
 .subheadline {
   position: relative;
   flex-grow: 0;
-  padding-top: 13rem;
+  margin-top: 93%;
   padding-left: 0.5rem;
   font-family: "Nunito", sans-serif;
   font-size: 1.1rem;
   font-weight: 800;
   color: #FFD600;
 }
-
 .hero-text h1 {
   position: absolute;
-  min-height: 3¡rem;       
-  overflow: hidden; 
-  padding-top: 3.5rem;
+  min-height: 3rem;
+  overflow: hidden;
   padding-left: 2.8rem;
   padding-bottom: 1rem;
-  font-family: 'Playfair Display', serif; 
+  font-family: 'Playfair Display', serif;
   font-size: 1.9rem;
   font-weight: 700;
   color: #1a1a1a;
 }
-
 .highlight {
   color: #1a1a1a;
 }
@@ -116,176 +91,274 @@
 /* Descripción */
 .description {
   position: relative;
-  width: 100vw;                    
-  left: 93%;                       
-  transform: translateX(-50%);     
-  padding: 0.7rem 2rem;              
-  margin: 1rem 0.35rem;            
-  max-width: none;                 
-  box-sizing: border-box;          
-  color: #494a43;                
+  width: 100vw;
+  left: 93%;
+  transform: translateX(-50%);
+  max-width: none;
+  padding-left: 2.5rem;
+  box-sizing: border-box;
+  color: #494a43;
   line-height: 1.6;
 }
+.description-full {
+  padding-top: 0;
+}
 
-/* Botones */
-.hero-buttons {
+/* Sección Tecnologías */
+.skills-section,
+.learning-section {
+  margin: 5rem 0 !important;
+  text-align: center;
+  background-color: #ffffff86;
+  border-radius: 15px;
+}
+
+.methodologies-section h4 {
+  font-size: 20px;
+  padding-top: 2rem;
+} 
+/* Encabezados */
+.skills-heading,
+.learning-heading {
   font-family: "Nunito", sans-serif;
-  width: 100%;
-  display: flex;
-  justify-content: center;    /* centra el contenido hijo */
-  gap: 1rem;
-  margin: 0;             /* separación vertical */
-  text-decoration: none;
-}
-
-.btn-primary {
-  display: inline-block;
-  background-color: #FFD600;
   color: #1a1a1a;
-  border: none;
-  padding: 0.75rem 1.8rem;
-  border-radius: 30px;
+  font-size: 1.3rem;
   font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.skills-heading::after,
+.learning-heading::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  display: block;
+  margin: 0.5rem auto 0;
 }
-
-.btn-outline {
+.other-skills-heading {
+  font-size: 20px;
+  justify-items: center;
+}
+.contact-text {
+  padding-top: 0;
+}
+/* Carrusel limpio */
+.clean-card {
   background: none;
-  border: 2px solid #1a1a1a;
-  color: #1a1a1a;
-  padding: 0.75rem 1.75rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
+  border: none;
+  box-shadow: none;
+  padding: 0.8rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.clean-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.8rem;
+}
+.clean-card span {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
 }
 
-.btn-outline:hover {
-  background-color: #1a1a1a;
-  color: #fff;
+.my-carousel {
+  width: 100%;
 }
-.desktop-title {
-  display: none;
+
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+  color: #555;
+}
+ /* flechas más pequeñas */
+  .my-carousel {
+    --swiper-navigation-size: 22px;  
+  }
+   .my-carousel .swiper-button-prev,
+  .my-carousel .swiper-button-next {
+    width: var(--swiper-navigation-size);
+    height: var(--swiper-navigation-size);
+  }
+  /* ── Botones en fila y de igual tamaño ── */
+.hero-buttons,
+.hero-buttons--bottom {
+  display: flex !important;
+  flex-direction: row !important;     /* siempre en fila */
+  justify-content: center;
+  gap: 1rem;
+  width: 70%;
+  max-width: 400px;                   /* adapta este valor si lo necesitas */
+  margin: 0 auto 2rem;
+}
+
+/* Cada enlace ocupa el mismo espacio */
+.hero-buttons a,
+.hero-buttons--bottom a {
+  flex: 1 1 0;
+  min-width: 0;                       
+  text-align: center;
+  width: auto !important;             
+}
+
+/* Unifica padding/altura */
+.hero-buttons .btn-primary,
+.hero-buttons--bottom .btn-primary,
+.hero-buttons .btn-outline,
+.hero-buttons--bottom .btn-outline {
+  padding: 0.3rem !important;      
+  font-size: 1rem;
+}
 }
 /* ==========================
    Móviles muy estrechos
    ========================== */
-@media (max-width: 400px) { 
+@media (max-width: 400px) {
   .hero-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 10px;
-  height: 43vh;            
-  z-index: 1;              
-  overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 10px;
+    height: 43vh;
+    z-index: 1;
+    overflow: hidden;
     max-width: 100%;
   }
-
-  .title-wrapper{
-    top: 3.5rem;
+  .title-wrapper {
+    top: 4rem;
     left: 2.2rem;
+    font-size: 0.80rem;
   }
   .subheadline {
-    padding-top: 10rem;
+    padding-top: 10%;
+    padding-left: 6.8%;
     font-size: 1rem;
-   }
+  }
+  .description {
+    padding-right: 5%;
+  }
 }
-  
 /* ==========================
    TABLET (768px – 911px)
    ========================== */
-@media (min-width: 768px) and (max-width: 911px) {
+@media (min-width: 768px)
+ and (max-width: 911px) {
   /* 1) Layout en dos columnas: texto+botones vs. imagen */
   .hero-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 4rem 2rem;
+    flex-wrap: wrap;
     gap: 2rem;
+    align-items: flex-start;
   }
-
   /* 2) Columna izquierda: texto + botones */
   .hero-content-left {
     flex: 0 0 50%;
-    max-width: 70%;
   }
   .hero-text {
     text-align: left;
-    padding-top: 2rem;
+    padding-top: 40%;
+  }
+  .description-full {
+    flex: 1 1 100%;
+    margin-top: 1rem;
   }
   .hero-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1rem;
     margin-top: 1.5rem;
   }
-    .subheadline {
-    font-size: 1.1rem;
+  .subheadline {
+    font-size: 1.5rem;
     text-align: left;
-    margin-bottom: 0;
+    margin-top: 25%;
+    margin-left: 4%;
+    margin-bottom: 5%;
   }
   .description {
-    padding-right: 17rem;
-    font-size: 1rem;
-    margin: 3rem 15rem 1rem 7rem;
+    padding-left: 4rem;
+    font-size: 1.2rem;
     text-align: left;
   }
-  /* 3) Columna derecha: imagen 60% */
+  .description-full {
+    order: 3;
+    width: 100vw;
+  }
+  /* 3) Columna derecha */
   .hero-image-wrapper {
-    max-width: 100%;
-    /* la mantenemos en flujo flex, no absolute */
+    flex: 0 0 50%;
   }
   .hero-image {
-    position: absolute; /* quita absolute si lo tenías */
+    position: absolute;
     width: 90%;
     height: auto;
-    left: auto;
+    left: 12%;
   }
   .hero-image img {
     width: 100%;
     height: auto;
   }
-
   /* 4) Bocadillo dentro de la imagen */
   .title-wrapper.image-title {
-    padding-top: 8%;
-    padding-left: 8%;
+    margin-top: 8%;
   }
   .title-wrapper.image-title .typewriter-text {
     font-size: 2.4rem;
     white-space: nowrap;
-  }
-    /* image-title sigue visible dentro de la imagen */
-  .title-wrapper.image-title { display: block; }
-  .desktop-title { display: none; }
 }
 
+/* TABLET: SECCIÓN TECNOLOGÍAS */
+  /* Skills: 3 en fila */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+  /* Learning: 2 en fila, centrados */
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+  /* Cards cuadrados */
+  .skill-card,
+  .learning-card {
+    width: 120px;
+    height: 120px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Ajusta el tamaño de los GIFs dentro */
+  .skill-card img,
+  .learning-card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+  }
+  /* Texto más compacto */
+  .skill-card span,
+  .learning-card span {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  }
 /* ==========================
    TABLET (911px – 1023px)
    ========================== */
 @media (min-width: 911px) and (max-width: 1023px) {
-.hero-container {
+  .hero-container {
     display: flex;
-    padding: 6rem 2rem;
     gap: 2rem;
   }
   .hero-text {
     text-align: left;
     padding-left: 1rem;
-    padding-top: 6rem;
   }
   .hero-buttons {
     display: flex;
@@ -295,24 +368,27 @@
     margin-top: 1.5rem;
     margin-left: 1.5rem;
   }
-   .subheadline {
-    font-size: 1.1rem;
+  .subheadline {
+    font-size: 1.5rem;
     text-align: left;
-    margin-bottom: 0;
+    margin-left: 5%;
   }
   .description {
-    padding-right: 25rem;
+    padding-right: 77%;
     font-size: 1rem;
-    margin: 1rem 0 0 2.5rem;
     text-align: left;
+    margin-left: 8%;
   }
-  /* 3) Columna derecha: imagen 60% */
+  .description-full {
+    padding-right: 15%;
+  }
+  
+  /* Columna derecha: imagen 60% */
   .hero-image-wrapper {
     max-width: 100%;
-    /* la mantenemos en flujo flex, no absolute */
   }
   .hero-image {
-    position: absolute; /* quita absolute si lo tenías */
+    position: absolute;
     width: 90%;
     height: auto;
     left: auto;
@@ -321,17 +397,89 @@
     width: 100%;
     height: auto;
   }
-
-  /* 4) Bocadillo dentro de la imagen */
+  /* Bocadillo dentro de la imagen */
   .title-wrapper.image-title {
-    padding-top: 10%;
-    padding-left: 11%;
+    padding-top: 2.5%;
   }
   .title-wrapper.image-title .typewriter-text {
-    font-size: 2.4rem;
+    font-size: 2.7rem;
     white-space: nowrap;
   }
-    /* image-title sigue visible dentro de la imagen */
-  .title-wrapper.image-title { display: block; }
-  .desktop-title { display: none; }
+  .title-wrapper.image-title {
+    display: block;
+  }
+  /* Contenedores generales */
+  .skills-section,
+  .learning-section,
+  .other-skills-section,
+  .methodologies-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  /* Títulos centrados y espaciado */
+  .skills-heading,
+  .learning-heading,
+  .other-skills-heading {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Grid a 1 columna */
+  .skills-grid,
+  .learning-grid,
+  .other-skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Tarjetas más grandes y centradas */
+  .skill-card,
+  .learning-card,
+  .other-skill-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .skill-card img,
+  .learning-card img,
+  .other-skill-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-card span,
+  .learning-card span,
+  .other-skill-card span {
+    font-size: 1rem;
+  }
+
+  /* Sección metodologías y contacto */
+  .methodologies-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
+
+  .contact-text {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .hero-buttons--bottom {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem 2rem;
+  }
+
+  .hero-buttons--bottom .btn-primary,
+  .hero-buttons--bottom .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
 }
+  

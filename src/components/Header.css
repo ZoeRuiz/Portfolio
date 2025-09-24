@@ -1,11 +1,12 @@
+/* src/styles/Header.css */
+
 .header {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;        
+  width: 100%;
   background-color: rgba(255,255,255,0.95);
-  backdrop-filter: blur(4px);     
-  border: none;  
+  backdrop-filter: blur(4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
@@ -18,8 +19,6 @@
   margin: 0 auto;
   height: 56px;
   padding: 0 1rem;
-  margin: 0 auto;
-  border: none;     
 }
 
 .logo-img {
@@ -29,26 +28,22 @@
 
 /* -------- NAV -------- */
 .nav {
-  position: relative;
   display: flex;
-  gap: 1rem;             /* Separación entre enlaces */
+  gap: 1rem;
 }
 
 .nav a {
   position: relative;
-  color: #1a1a1a;        /* Texto negro por defecto */
+  color: #1a1a1a;
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: 500;
-  padding: 0.5rem 0.75rem;    /* Espacio vertical para hover */
-  text-decoration: none; /* Sin subrayado por defecto */
-  transition: color 0.3s ease, background 0.3s ease;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.nav a:hover::after,
-.nav a:focus::after {
-  width: 100%;
-}
+/* underline-on-hover */
 .nav a::after {
   content: "";
   position: absolute;
@@ -56,29 +51,33 @@
   left: 0;
   width: 0;
   height: 1.5px;
-  background-color: #0b0b0b;  /* color de la línea */
+  background-color: #0b0b0b;
   transition: width 0.3s ease;
 }
 
-/* ==========================
-   Tablet (≥768px)
-   ========================== */
+.nav a:hover::after,
+.nav a:focus::after {
+  width: 100%;
+}
+
+/* ACTIVE STATE */
+.nav a.active {
+  color: #0b0b0b;
+}
+
+.nav a.active::after {
+  width: 100%;
+  background-color: #1a1a1a;
+}
+
+/* ========================== */
+/*   Tablet (≥768px)          */
+/* ========================== */
 @media (min-width: 768px) {
   .nav a {
-  position: relative;
-  color: #1a1a1a;        /* Texto negro por defecto */
-  font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  text-decoration: none; /* Sin subrayado por defecto */
-  transition: color 0.3s ease, background 0.3s ease;
+    font-size: 20px;
+  }
+  .nav a::after {
+    background-color: #1a1a1a;
+  }
 }
-
-.nav a:hover {
-  color: #ffffff;      
-}  
-.nav a::after {
-  background-color: white;  /* color de la línea */
-}
-}
-

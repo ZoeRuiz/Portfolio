@@ -107,4 +107,4 @@ Si tienes dudas o quieres una demo en vivo, escríbeme:
 ✉️ zoraida.ruiz89@gmail.com
 
 ¡Gracias por visitar mi portfolio!
-Estoy siempre abierta a nuevos retos y colaboraciones en UX/UI y maquetación. 😊
+Estoy siempre abierta a nuevos retos y colaboraciones. 😊

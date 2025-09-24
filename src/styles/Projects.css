@@ -1,7 +1,19 @@
+/* ===========================
+   VARIABLES (ajustables)
+   =========================== */
+:root {
+  --accent: #E7C61B;
+  --chip-bg: #fff8d1;
+  --border: #eee;
+  --shadow: 0 6px 18px rgba(0,0,0,.06);
+  --bg-light: #fbfbfb;
+  --text-color: #222;
+  --primary-color: var(--accent);
+}
 
-/* ======================= */
-/* Sección base (mobile)   */
-/* ======================= */
+/* ===========================
+   BASE SECCIÓN
+   =========================== */
 .projects-section {
   padding: 2rem 1rem;
   background-color: var(--bg-light);
@@ -9,7 +21,7 @@
 
 .section-title {
   text-align: center;
-  font-size: 2rem;        /* tamaño más pequeño en móvil */
+  font-size: 2rem !important;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -22,7 +34,34 @@
   margin: 0.5rem auto 0;
 }
 
-/* Listado de tarjetas apiladas */
+/* ===========================
+   TABS
+   =========================== */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin: 2rem 0 2rem 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tab {
+  font-weight: 600;
+  border-radius: 100px;
+  border: 2px solid var(--border);
+  padding: 0.8rem;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+.tab.active {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+}
+
+/* ===========================
+   GRID (DESARROLLO)
+   =========================== */
 .projects-grid {
   display: flex;
   flex-direction: column;
@@ -30,7 +69,7 @@
   align-items: stretch;
 }
 
-/* Tarjeta individual */
+/* AJUSTE DESARROLLO: tarjetas centradas en contenedor */
 .project-card {
   background-color: #fff;
   border-radius: 1rem;
@@ -38,21 +77,24 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
 }
 
-/* Texto dentro de la tarjeta */
 .project-content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .project-title {
   font-family: "Nunito", sans-serif;
-  font-size: 1.5rem;
   margin: 0;
+  font-size: 1.5rem;
   color: var(--text-color);
 }
+
 .project-description {
   font-family: "Nunito", sans-serif;
   margin: 0;
@@ -60,6 +102,7 @@
   color: #494a43;
   line-height: 1.5;
 }
+
 .project-links {
   display: flex;
   justify-content: center;
@@ -67,18 +110,37 @@
   margin-top: 1rem;
 }
 
-/* Imagen dentro de la tarjeta */
+/* Imagen tarjeta Desarrollo (adaptable, fijada en pantallas grandes) */
 .project-image-wrapper {
   width: 100%;
-  overflow: hidden;         /* asegura recorte uniforme */
-  border-radius: 0.5rem;    /* mismo radio que la tarjeta */
+  overflow: hidden;
+  border-radius: 0.5rem;
 }
 .project-image {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;        /* cubre todo el wrapper */
+  object-fit: cover;
 }
+
+/* Tags desarrollo */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .5rem 0 .75rem;
+  list-style: none;
+  padding: 0;
+}
+.tag {
+  font-size: .75rem;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  border: 1px solid var(--border);
+}
+
+/* Botones globales */
 .projects-section .btn-primary,
 .projects-section .btn-outline {
   font-family: "Nunito", sans-serif;
@@ -86,66 +148,378 @@
   font-weight: 600;
   padding: 0.75rem 2.5rem;
 }
-/* ───────────────────────────────────── */
-/* Ajustes Mobile (<768px):            */
-/* ───────────────────────────────────── */
+
+/* ===========================
+   RESPONSIVE: MÓVIL (<768px)
+   =========================== */
 @media (max-width: 767px) {
-  .projects-grid {
-    align-items: center;       /* centra cada tarjeta */
+  .projects-grid { align-items: center; }
+  .project-image-wrapper { width: 0; } /* mantiene el diseño que tenías en móvil */
+  .project-image { width: 100%; height: auto; object-fit: contain; }
+  .project-content { padding: 1.5rem; }
+
+  /* Masonry -> carrusel horizontal */
+  .masonry {
+    display: flex;
+    overflow-x: auto;
+    column-count: initial;
+    gap: 12px;
+    padding: 0 .5rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .masonry::-webkit-scrollbar { display: none; }
+
+  .masonry-item { flex: 0 0 80%; max-width: 80%; scroll-snap-align: center; }
+
+  .design-card {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    border-radius: .75rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);
   }
 
-  .project-image-wrapper {
-    width: 60%;                /* ocupa 80% del contenedor */
-    max-height: 200px;         /* evita alturas excesivas */
-    margin: 0 auto 1rem;       /* centrada y separada del texto */
-    border-radius: 1.5rem;
+  .design-thumb { height: clamp(110px, 40vw, 170px); overflow: hidden; }
+  .design-thumb img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: auto; }
+
+  .design-meta { padding: .7rem .85rem 1rem; }
+  .design-meta .project-title { font-size: 1rem; }
+  .design-meta .project-description { font-size: .9rem; line-height: 1.4; }
+  .tag { font-size: .7rem; padding: .2rem .45rem; }
+
+  /* Logos: mostrar enteros */
+  .design-card.logo .design-thumb {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
     overflow: hidden;
   }
-
-  .project-image {
-    width: 100%;
+  .design-card.logo .design-thumb img {
+    width: auto;
     height: auto;
+    max-width: 100%;
+    max-height: 140px;
     object-fit: contain;
   }
 
-  .project-content {
-    padding: 1.5rem;             /* reduce padding interno */
+  /* Botones menos enormes en móvil */
+  .tab { padding: .45rem .65rem; font-size: .88rem; }
+  .btn-chip { padding: .28rem .5rem; font-size: .8rem; }
+  .projects-section .btn-primary,
+  .projects-section .btn-outline { padding: .6rem 1.4rem; font-size: .95rem; }
+
+  /* Flechas carrusel móvil */
+  .carousel-btn {
+    position: absolute;
+    top: 40%;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.15);
+    background: rgba(255,255,255,.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background .2s ease;
   }
+  .carousel-btn.prev { left: .5rem; }
+  .carousel-btn.next { right: .5rem; }
 }
 
-/* — Tablet & Desktop (>=768px) — */
+/* ===========================
+   TABLET (>=768px)
+   =========================== */
 @media (min-width: 768px) {
-  .projects-section {
-    padding: 3rem 2rem;
-  }
-  .section-title {
-    font-size: 2.5rem;         /* tamaño original en tablet */
-  }
-  .projects-grid {
-    gap: 3rem;
-    align-items: stretch;
-  }
+  .projects-section { padding: 3rem 2rem; }
+  .section-title { font-size: 2.5rem; }
+
+  /* Tarjetas centradas y diseño en filas */
+  .projects-grid { gap: 3rem; align-items: center; }
+
   .project-card {
     flex-direction: row;
     align-items: stretch;
+    width: 100%;
+    max-width: 900px;
   }
-  /* Texto al 50%, imagen al 50% */
-  .project-content,
+  .project-card.reverse { flex-direction: row-reverse; }
+
+  /* AJUSTE DESARROLLO: columna imagen fija en tablet */
   .project-image-wrapper {
-    width: 50%;
+    width: 40%;
+    max-width: 360px;
+    min-width: 220px;
+    height: auto;
+    flex: 0 0 40%;
+    display: block;
+    border-radius: 0.75rem;
+    overflow: hidden;
   }
-  /* Alternar orden en tarjetas pares */
-  .project-card.reverse {
-    flex-direction: row-reverse;
-  }
+  .project-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
   .project-content {
+    width: 60%;
     padding: 2rem;
+    box-sizing: border-box;
   }
+
+  /* Masonry 2 columnas */
+  .masonry { column-count: 2; column-gap: 1rem; }
+  .design-card { border-radius: .9rem; box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+  .design-thumb { height: clamp(180px, 28vw, 260px); overflow: hidden; }
+  .design-thumb img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: auto; }
+  .design-meta { padding: .9rem 1rem 1.1rem; }
+
+  /* DIF: aplicar Nunito a la zona de diseño */
+  .design-card,
+  .design-card .design-meta,
+  .filters,
+  .btn-chip {
+    font-family: "Nunito", sans-serif;
+  }
+
+  /* Unificar tamaño visual de las cards de diseño */
+  .masonry-item { display: block; }
+  .design-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 340px;
+  }
+  .design-thumb { flex: 0 0 auto; height: clamp(180px, 28vw, 260px); overflow: hidden; }
+  .design-meta {
+    flex: 1 1 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .design-meta .project-description { margin: 0 0 .75rem 0; color: #555; line-height: 1.4; }
 }
 
-/* — Desktop grande (>=1024px) — */
+/* ===========================
+   DESKTOP (>=1024px)
+   =========================== */
 @media (min-width: 1024px) {
-  .projects-section {
-    padding: 4rem 4rem;
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .project-card {
+    flex-direction: row;
+    max-width: 900px;
+    width: 100%;
+  }
+  .project-card.reverse { flex-direction: row-reverse; }
+
+  .project-image-wrapper {
+    flex: 0 0 250px;
+    width: 250px;
+    height: 250px;
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .project-image { width: 100%; height: 100%; object-fit: cover; }
+
+  .project-content {
+    flex: 1;
+    max-width: calc(900px - 250px);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .project-links { justify-content: flex-start; margin-top: auto; }
+
+  /* Masonry 3 columnas, cards uniformes */
+  .masonry { column-count: 3; column-gap: 1.25rem; }
+  .design-thumb { height: clamp(200px, 20vw, 220px); }
+  .design-card { min-height: 360px; }
+  .design-card.logo .design-thumb img { max-height: clamp(160px, 18vw, 300px) !important; }
+}
+
+/* ===========================
+   FILTERS, TAGS, LIGHTBOX
+   =========================== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .25rem 0 1rem;
+  justify-content: center;
+}
+.btn-chip {
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: .4rem .75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+.btn-chip.active { border-color: var(--accent); background: var(--chip-bg); }
+
+.masonry { column-gap: 1.25rem; }
+.masonry-item { break-inside: avoid; margin-bottom: 1.25rem; }
+
+.design-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.design-thumb { display: block; width: 100%; border: 0; padding: 0; background: none; cursor: zoom-in; }
+.design-thumb img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+.design-thumb:hover img { transform: scale(1.02); }
+.design-meta { padding: 1rem 1rem 1.25rem; }
+
+/* Tags style (reusable) */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: .5rem 0 .75rem;
+  list-style: none;
+  padding: 0;
+}
+.tag { font-size: .75rem; padding: .25rem .5rem; border-radius: 999px; background: var(--chip-bg); border: 1px solid var(--border); }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.8);
+  display: grid; place-items: center;
+  padding: 2rem; z-index: 999;
+}
+.lightbox-img {
+  max-width: min(1200px, 90vw);
+  max-height: 80vh;
+  border-radius: .75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.lightbox-caption { color: #fff; margin-top: .75rem; text-align: center; }
+.lightbox-close {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 44px; height: 44px;
+  font-size: 1.5rem; line-height: 1;
+  border: none; border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  cursor: pointer;
+}
+
+/* ===========================
+   LOGOS: SIEMPRE COMPLETOS
+   =========================== */
+.design-card.logo .design-thumb {
+  height: auto !important;
+  aspect-ratio: auto !important;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(10px, 2.5vw, 20px);
+  background: #fff;
+}
+.design-card.logo .design-thumb img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 50% !important;
+  max-height: clamp(120px, 22vh, 240px) !important;
+  object-fit: contain !important;
+  aspect-ratio: auto !important;
+  transform: none !important;
+}
+.design-card.logo .design-thumb:hover img { transform: none !important; }
+
+/* Ajustes específicos para logos en móvil */
+@media (max-width: 767px) {
+  .masonry-item.design-card.logo {
+    flex: 0 0 70% !important;
+    max-width: 70% !important;
+  }
+  .design-card.logo .design-meta .project-title { font-size: 0.95rem; }
+  .design-card.logo .design-meta .project-description { font-size: 0.85rem; }
+}
+
+/* LIMITES DE ALTURA EN TABLET/DESKTOP (logos) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .design-card.logo .design-thumb img { max-height: clamp(140px, 20vw, 260px) !important; }
+}
+@media (min-width: 1024px) {
+  .design-card.logo .design-thumb img { max-height: clamp(160px, 18vw, 300px) !important; }
+}
+
+/* =========================
+   UX: contadores, alturas y accesibilidad
+   ========================= */
+
+/* Contador en chips (estilo) */
+.btn-chip { display: inline-flex; align-items: center; gap: 0.35rem; }
+.btn-chip .chip-label { font-weight: 400; }
+.btn-chip .chip-count { opacity: 0.55; font-weight: 400; font-size: 0.85rem; color: #666; }
+
+/* Resaltar chips activos con un pequeño borde y fondo */
+.btn-chip.active {
+  border-color: var(--accent);
+  background: var(--chip-bg);
+  box-shadow: 0 6px 16px rgba(231,198,27,0.08);
+}
+
+/* Focus styles accesibles para tabs y chips */
+.tab:focus,
+.btn-chip:focus,
+button[role="tab"]:focus {
+  outline: 3px solid rgba(231,198,27,0.18);
+  outline-offset: 3px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Hover / press microinteractions */
+.btn-chip:hover { transform: translateY(-2px); transition: transform .12s ease; }
+.btn-chip:active { transform: translateY(0); }
+
+.design-card {
+  transition: transform .18s cubic-bezier(.2,.9,.2,1), box-shadow .18s ease;
+}
+.design-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(2,6,23,0.08);
+}
+
+/* Unificar altura visual de las cards de diseño (mejor escala) */
+@media (min-width: 768px) {
+  .design-card { min-height: 380px; } 
+}
+
+/* Mejorar lectura en project-description dentro de design-meta */
+.design-meta .project-description {
+  color: #605F5F;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: .75rem;
+}
+
+/* Ajuste: hacer que los botones Demo/Código en desarrollo sean más discretos en móvil */
+@media (max-width: 767px) {
+  .projects-section .btn-primary,
+  .projects-section .btn-outline {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.92rem;
   }
 }
