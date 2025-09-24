@@ -45,6 +45,7 @@
   flex-wrap: wrap;
 }
 .tab {
+  color: #605F5F; 
   font-weight: 600;
   border-radius: 100px;
   border: 2px solid var(--border);
@@ -55,6 +56,7 @@
   transition: all 0.2s ease;
 }
 .tab.active {
+  color: black;
   border-color: var(--accent);
   box-shadow: 0 4px 12px rgba(0,0,0,.06);
 }
@@ -523,3 +525,13 @@ button[role="tab"]:focus {
     font-size: 0.92rem;
   }
 }
+
+
+/* Tabs desarrollo / diseño */
+.tab { color: var(--text-color); }
+.tab.active { color: var(--accent); }
+
+/* Chips / tags */
+.tag { color: var(--text-color); }
+.btn-chip { color: var(--text-color); }
+.btn-chip.active { color: var(--accent); }
