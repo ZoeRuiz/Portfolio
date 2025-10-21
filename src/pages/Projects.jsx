@@ -10,6 +10,7 @@ import maquetaImg   from '../assets/Maqueta.png';
 // === Imágenes Diseño / Logos ===
 import logoAurora        from '../assets/AuroraTech.png';
 import logoFrikisfera    from '../assets/frikisfera.png';
+import nuenti from '../assets/nuenti.png';
 import recetasVeganas    from '../assets/veganas.png';
 import bannerElectronica from '../assets/electronica.jpg';
 import bannerEstetica    from '../assets/estetica.png';
@@ -17,11 +18,11 @@ import logoZoe           from '../assets/zoeweb.png';
 import logoArmario       from '../assets/armario.png';
 import tarjetaDentista   from '../assets/dentista.png';
 import flyerRestaurante  from '../assets/restaurante.jpg';
-import packagingCosmetica from '../assets/cosmetica.png';
-import packagingVino     from '../assets/vino.png';
-import packagingBurger   from '../assets/burger.jpg';
 import posterExplora     from '../assets/explora.png';
 import tarjetaGrafica    from '../assets/tarjetaGrafica.jpg';
+import webCafe from '../assets/web-cafe.jpg';
+import appMeditacion from '../assets/app-meditacion.jpg';
+
 
 // === Datos Desarrollo ===
 const devProjects = [
@@ -58,16 +59,16 @@ const devProjects = [
 const designProjects = [
   { id: 1, title: 'Logo – AuroraTech', img: logoAurora, isLogo: true, tags: ['Logo', 'Branding'], description: 'Identidad visual para empresa de tecnología, versión web y multiuso.' },
   { id: 2, title: 'Logo – Frikisfera', img: logoFrikisfera, isLogo: true, tags: ['Logo', 'Branding'], description: 'Logo para e-commerce con estilo juvenil y versátil.' },
-  { id: 3, title: 'Banner de cocina', img: recetasVeganas, tags: ['Banner', 'Tipografía'], description: 'Banner de sección para web de recetas veganas con foco en tipografía clara.' },
-  { id: 4, title: 'Banner Electrónica', img: bannerElectronica, tags: ['Banner', 'Tipografía'], description: 'Composición gráfica para e-commerce de electrónica (hero image).' },
-  { id: 5, title: 'Banner blog Estética', img: bannerEstetica, tags: ['Banner', 'Branding'], description: 'Banner para blog de estética.' },
-  { id: 6, title: 'Logo – Web Personal', img: logoZoe, isLogo: true, tags: ['Logo'], description: 'Logo para marca personal, pensado para uso en cabeceras y favicon.' },
-  { id: 7, title: 'Logo – El Armario de Zoe', img: logoArmario, isLogo: true, tags: ['Logo'], description: 'Logo para blog de moda.' },
-  { id: 8, title: 'Tarjeta Clínica Dental', img: tarjetaDentista, tags: ['Tarjeta', 'Tipografía'], description: 'Tarjeta de visita con jerarquía tipográfica y datos de contacto claros.' },
-  { id: 9, title: 'Flyer Restaurante', img: flyerRestaurante, tags: ['Flyer', 'Branding', 'Tipografía'], description: 'Flyer promocional para restaurante — formato A5 para imprimir.' },
-  { id: 10, title: 'Packaging Cosmética', img: packagingCosmetica, tags: ['Packaging', 'Branding'], description: 'Packaging para línea de cosmética con patrón y color branding.' },
-  { id: 11, title: 'Packaging Vino', img: packagingVino, tags: ['Packaging', 'Branding'], description: 'Packaging de vino con enfoque premium.' },
-  { id: 12, title: 'Packaging Hamburguesa', img: packagingBurger, tags: ['Packaging', 'Branding'], description: 'Packaging hamburguesa calidad óptima.' },
+  { id: 3, title: 'Diseño – App Red Social', img: nuenti, tags: ['App', 'Maqueta', 'Figma'], description: 'Diseño de ejemplo de aplicación móvil para red social' },
+  { id: 4, title: 'Diseño – Web Cafetería', img: webCafe, tags: ['Web', 'Maqueta', 'Figma'], description: 'Diseño de web sencilla para cafetería' },
+  { id: 5, title: 'Diseño – App', img: appMeditacion, tags: ['App', 'Maqueta', 'Figma'], description: 'Diseño de app' },
+  { id: 6, title: 'Banner de cocina', img: recetasVeganas, tags: ['Banner', 'Tipografía'], description: 'Banner de sección para web de recetas veganas con foco en tipografía clara.' },
+  { id: 7, title: 'Banner Electrónica', img: bannerElectronica, tags: ['Banner', 'Tipografía'], description: 'Composición gráfica para e-commerce de electrónica (hero image).' },
+  { id: 8, title: 'Banner blog Estética', img: bannerEstetica, tags: ['Banner', 'Branding'], description: 'Banner para blog de estética.' },
+  { id: 9, title: 'Logo – Web Personal', img: logoZoe, isLogo: true, tags: ['Logo'], description: 'Logo para marca personal, pensado para uso en cabeceras y favicon.' },
+  { id: 10, title: 'Logo – El Armario de Zoe', img: logoArmario, isLogo: true, tags: ['Logo'], description: 'Logo para blog de moda.' },
+  { id: 11, title: 'Tarjeta Clínica Dental', img: tarjetaDentista, tags: ['Tarjeta', 'Tipografía'], description: 'Tarjeta de visita con jerarquía tipográfica y datos de contacto claros.' },
+  { id: 12, title: 'Flyer Restaurante', img: flyerRestaurante, tags: ['Flyer', 'Branding', 'Tipografía'], description: 'Flyer promocional para restaurante — formato A5 para imprimir.' },
   { id: 13, title: 'Póster Inspirador', img: posterExplora, tags: ['Poster'], description: 'Póster con mensaje inspirador y composición tipográfica.' },
   { id: 14, title: 'Tarjeta Freelance', img: tarjetaGrafica, tags: ['Tarjeta'], description: 'Tarjeta para freelance con datos claros.' },
 ];

@@ -44,7 +44,7 @@
   box-shadow: none;
 }
 .title-wrapper {
-  font-size: small;
+  font-size: 0.8rem;
   position: absolute;
   top: 3.5%;
   width: 40%;
@@ -111,7 +111,6 @@
 .learning-section {
   margin: 5rem 0 !important;
   text-align: center;
-  background-color: #ffffff86;
   border-radius: 15px;
 }
 
@@ -186,11 +185,11 @@
 .hero-buttons,
 .hero-buttons--bottom {
   display: flex !important;
-  flex-direction: row !important;     /* siempre en fila */
+  flex-direction: row !important;     
   justify-content: center;
   gap: 1rem;
   width: 70%;
-  max-width: 400px;                   /* adapta este valor si lo necesitas */
+  max-width: 400px;                  
   margin: 0 auto 2rem;
 }
 
