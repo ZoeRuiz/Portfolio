@@ -39,9 +39,9 @@ export default function HomeDesktop() {
             ¡Hola, soy <span className="highlight">Zoe Ruiz</span>!
           </h1>
           <p className="hero-desktop__text">
-            Profesional multidisciplinar que une el mundo del diseño gráfico y la tecnología.  
-            Llevo varios años creando ilustraciones, banners y logotipos, y en 2023 di el salto al UX/UI: diseño de wireframes, prototipos interactivos y pruebas de usabilidad para garantizar interfaces claras y accesibles. También maqueto pixel-perfect responsive en HTML y CSS y, tras completar el Bootcamp FullStack Developer en mayo de 2025, desarrollo frontends con React y gestiono la lógica backend, creando soluciones web completas.
-          </p>
+             Trabajo en la intersección entre diseño y tecnología. Empecé diseñando ilustraciones, banners y logotipos, pero pronto descubrí que podía ir más allá: en 2023 me sumergí en el mundo del UX/UI. Para mí, UX/UI no es solo diseñar interfaces bonitas, sino pensar en cómo las personas las usan: desde wireframes y prototipos interactivos hasta pruebas de usabilidad, mi objetivo es que cada producto sea intuitivo, accesible y agradable de navegar. Un buen diseño UX/UI hace que la tecnología se sienta natural, que los usuarios entiendan qué hacer sin esfuerzo y disfruten cada interacción.
+             Pero no me quedo solo en la parte visual: maqueto interfaces pixel-perfect y responsive en HTML y CSS, y tras completar el Bootcamp FullStack Developer en 2025, desarrollo frontends con React y gestiono la lógica backend, llevando mis ideas hasta soluciones web completas y funcionales.
+         </p>      
           <p className="hero-desktop__text hero-desktop__full">
             Combino creatividad y un enfoque centrado en el usuario para diseñar interfaces intuitivas, accesibles y visualmente impactantes.
           </p>
